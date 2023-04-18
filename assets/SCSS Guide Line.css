@@ -1,0 +1,147 @@
+/* Note: First save file with .scss */
+
+/* Normal */
+.button {
+    padding: 3px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+    border: 1px solid #e1e4e8;
+  }
+
+
+/* Nesting */
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li { display: inline-block; list-style: none;}
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+
+/* Combined Writing */
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+    list-style: none;
+    display: inline-block;
+    
+    &::before {
+      content: "";
+    }
+
+    &::after {
+        content: "* * *";
+    }
+    a {
+      display: block;
+      padding: 6px 12px;
+      text-decoration: none;
+    }
+  }
+}
+}
+
+
+/* Selector Lists */
+.alert, .warning {
+    ul, p {
+      margin-right: 0;
+      margin-left: 0;
+      padding-bottom: 0;
+   }
+}
+
+
+/* Variables */
+$base-color: #c6538c;
+$border-dark: rgba($base-color, 0.88);
+
+.alert {
+  border: 1px solid $border-dark;
+}
+
+
+/* Extend/Inheritance */
+/* This CSS will print because %message-shared is extended. */
+%message-shared {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  @extend %message-shared;
+  border-color: green;
+}
+
+
+/* Mixins */
+/* Example - 1 */
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin horizontal-list {
+  @include reset-list;
+
+  li {
+    display: inline-block;
+    margin: {
+      left: -2px;
+      right: 2em;
+    }
+  }
+}
+
+nav ul {
+  @include horizontal-list;
+}
+
+
+/* Example - 2 */
+@mixin square($size, $radius: 0) {
+  width: $size;
+  height: $size;
+
+  @if $radius != 0 {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+}
+}
+
+.avatar {
+  @include square(100px, $radius: 4px);
+}
+
+
+/* Example - 3 */
+$name: "women-holding-hands";
+$glyph: "👭";
+
+@mixin define-emoji($name, $glyph) {
+    span.emoji-#{$name} {
+      font-family: IconFont;
+      font-variant: normal;
+      font-weight: normal;
+      content: $glyph;
+   }
+}
+
+.icon{
+@include define-emoji("women-holding-hands", "👭");
+}
