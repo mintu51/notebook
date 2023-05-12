@@ -38,8 +38,19 @@ https://codepen.io/elkeke19/pen/VwYYWjy
 #owl-demo2 .pp::after {content: ''; width: 3px; height: 43px; background-color: red; position: absolute; top: -9px; left: -30px; transform: rotate(92deg);}
 #owl-demo2 .pp2::after{content: ''; width: 3px; height: 30px; background-color: red; position: absolute; top: 25px; left: 3px; transform: rotate(0deg);}
 
+/* OWL 2.3 owl-nav & owl-dots*/
 
-Bootsrap 5.2.1 Model POPUP
+#owl-demo2 .owl-nav{position: absolute; font-size: 40px; color: #000; left: 50%; bottom: 17px; transform: translate(-50%, 0);}
+#owl-demo2 .owl-nav .owl-next{left: 10px;}
+#owl-demo2 .owl-nav .owl-prev{right: 10px;}
+#owl-demo2 .owl-nav .owl-prev, #owl-demo2 .owl-nav .owl-next{position: relative; background: #000; color: #fff; height: 50px; width: 50px; border-radius: 50%;}
+#owl-demo2 .owl-nav .owl-next span, #owl-demo2 .owl-nav .owl-prev span{top: -2px; position: relative;}
+
+#owl-demo2 .owl-dots{position: absolute; bottom: -20px; left: 50%; transform: translate(-50%, 0);}
+#owl-demo2 .owl-dots .owl-dot{  color: #000; border:0; width: 10px; height: 10px; margin-right:5px; background-color: #000; border-radius: 50px;}
+#owl-demo2 .owl-dots .owl-dot.active{color: red; background-color: red;}
+
+/* Bootsrap 5.2.1 Model POPUP */
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
