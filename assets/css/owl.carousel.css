@@ -190,3 +190,7 @@
 #owl-demo2 .owl-nav .owl-prev{right: 10px;}
 #owl-demo2 .owl-nav .owl-prev, #owl-demo2 .owl-nav .owl-next{position: relative; background: #000; color: #fff; height: 50px; width: 50px; border-radius: 50%;}
 #owl-demo2 .owl-nav .owl-next span, #owl-demo2 .owl-nav .owl-prev span{top: -2px; position: relative;}
+
+#owl-demo2 .owl-dots{position: absolute; bottom: -20px; left: 50%; transform: translate(-50%, 0);}
+#owl-demo2 .owl-dots .owl-dot{  color: #000; border:0; width: 10px; height: 10px; margin-right:5px; background-color: #000; border-radius: 50px;}
+#owl-demo2 .owl-dots .owl-dot.active{color: red; background-color: red;}
