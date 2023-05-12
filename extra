@@ -1,0 +1,39 @@
+/* OWL NEX & PREVIEW */
+Source: Owl Carousel 2 - Single slide - Custom Next and Previous buttons
+https://codepen.io/elkeke19/pen/VwYYWjy
+
+
+<script>
+  $(document).ready(function(){
+  var owl = $('#owl-demo2');
+  owl.owlCarousel({
+    loop:true,
+    margin:10,
+    nav:false,
+    items: 1,
+  });
+  
+  // Custom Button
+  $('.customNextBtn').click(function() {
+    owl.trigger('next.owl.carousel');
+  });
+  $('.customPreviousBtn').click(function() {
+    owl.trigger('prev.owl.carousel');
+  });
+  
+});
+</script>
+
+<div class="btns">
+  <div class="customPreviousBtn pp2">2</div>
+</div>
+<div class="btns2">
+  <div class="customNextBtn pp">1</div>
+</div>
+
+#owl-demo2 .btns {display: table; top: 50%; position: absolute;}
+#owl-demo2 .btns2 {display: table; bottom: 10%; right: 5%; position: absolute;}
+#owl-demo2 .customNextBtn, #owl-demo2 .customPreviousBtn{float: right; color: red; margin-left:18px; cursor: pointer; border-radius: 50px;}
+#owl-demo2 .pp, #owl-demo2 .pp2{position: relative;}
+#owl-demo2 .pp::after {content: ''; width: 3px; height: 43px; background-color: red; position: absolute; top: -9px; left: -30px; transform: rotate(92deg);}
+#owl-demo2 .pp2::after{content: ''; width: 3px; height: 30px; background-color: red; position: absolute; top: 25px; left: 3px; transform: rotate(0deg);}
