@@ -2,7 +2,6 @@
 Source: Owl Carousel 2 - Single slide - Custom Next and Previous buttons
 https://codepen.io/elkeke19/pen/VwYYWjy
 
-
 <script>
   $(document).ready(function(){
   var owl = $('#owl-demo2');
